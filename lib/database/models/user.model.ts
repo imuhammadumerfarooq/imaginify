@@ -1,5 +1,15 @@
 import { model, models, Schema } from "mongoose";
 
+export interface IUser extends Document {
+    clerkId: string;
+    email: string;
+    userName: string;
+    photo: string;
+    firstName?: string;
+    lastName?: string;
+    planId?: number;
+    creditBalance?: number;
+}
 const UserSchema = new Schema({
     clerkId: { type: String, required: true, unique: true },
     email: { type: String, required: true, unique: true },
